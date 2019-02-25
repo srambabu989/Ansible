@@ -1,12 +1,12 @@
 ---
--hosts: all
-become: yes
-tasks: 
- -name: install webserver on ubuntu 14 (apache2)
- apt:
-    name: apache2
-    state: present
--name: start the web server
-service: 
-   service: apache2
-   state: started 
+- hosts: all
+  become: yes
+  tasks: 
+   - name: install webserver on ubuntu 14 (apache2)
+     apt:
+      name: apache2
+      state: present
+   - name: start the web server
+     service: 
+      name: apache2
+      state: started  
